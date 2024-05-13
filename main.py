@@ -11,6 +11,9 @@ class Board:
                 pass
         return None
 
+    def valid_in_row(self, row, num):
+        return num not in self.board[row]
+
 puzzle = [
   [0, 0, 2, 0, 0, 8, 0, 0, 0],
   [0, 0, 0, 0, 0, 3, 7, 6, 2],
@@ -24,6 +27,6 @@ puzzle = [
 ]
 
 gameboard = Board(puzzle)
-print(gameboard.find_empty_cell())
+print(gameboard.valid_in_row(0, 8))
 
-# At this point code finds row and column index of an empty cell in puzzle
+# At this stage the code checks whether the number is valid in row
